@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void playGame(string nameOne, string nameTwo, string symbolOne, string symbolTwo, string gameBoard) {
+void playGame(string nameOne, string nameTwo, string symbolOne, string symbolTwo, string gameBoard[3][3]) {
 	cout << "This statement is only here to stop any complaints if I forget to finish this project and run this in like 6 months' time";
 }
 
