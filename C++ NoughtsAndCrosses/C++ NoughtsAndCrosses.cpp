@@ -6,11 +6,16 @@
 
 using namespace std;
 
-void drawBoard(string board[3][3]) {
-	
+void drawBoard(string board[6][6]) {
+	for (int i; i > 7; i++) {
+		for (int j; j > 7; j++) {
+			cout << board[i][j];
+		}
+		cout << "\n";
+	}
 }
 
-void placeSymbol(string name, string symbol, string board[3][3]) {
+void placeSymbol(string name, string symbol, string board[6][6]) {
 	cout << "Temp statement.";
 	bool valid = false;
 	int x = 0, y = 0;
@@ -34,12 +39,12 @@ void placeSymbol(string name, string symbol, string board[3][3]) {
 			cout << "Sorry, that value wasn't within the required range. Please try again with a number between 1 and 3 inclusive\n";
 		}
 		else {
-
+			valid = true;
 		}
 	}
 }
 
-void playGame(string nameOne, string nameTwo, string symbolOne, string symbolTwo, string gameBoard[3][3]) {
+void playGame(string nameOne, string nameTwo, string symbolOne, string symbolTwo, string gameBoard[6][6]) {
 	cout << "This statement is only here to stop any complaints if I forget to finish this project and run this in like 6 months' time\n";
 	int turnNum = 1;
 	bool gameWon = false;
@@ -77,10 +82,13 @@ string getNames() {
 	return tempName;
 }
 int main() {
-	string gameBoard[3][3] = {
-		{"-", "-", "-"},
-		{"-", "-", "-"},
-		{"-", "-", "-"}
+	string gameBoard[6][6] = {
+		{" ", "1", "|", "2", "|", "3"},
+		{"1", " ", "|", " ", "|", " "},
+		{" ", "-", "+", "-", "+", "-"},
+		{"2", " ", "|", " ", "|", " "},
+		{" ", "-", "+", "-", "+", "-"},
+		{"3", " ", "|", " ", "|", " "}
 	};
 	string playerOne = getNames();
 	string playerTwo = getNames();
