@@ -84,12 +84,13 @@ string getNames() {
 int main() {
 	string gameBoard[6][6] = {
 		{" ", "1", "|", "2", "|", "3"},
-		{"1", " ", "|", " ", "|", " "},
+		{"1", "1, 1", "|", " ", "|", " "},
 		{" ", "-", "+", "-", "+", "-"},
 		{"2", " ", "|", " ", "|", " "},
 		{" ", "-", "+", "-", "+", "-"},
-		{"3", " ", "|", " ", "|", " "}
+		{"3", " ", "|", " ", "|", "3, 3"}
 	};
+	drawBoard(gameBoard);
 	string playerOne = getNames();
 	string playerTwo = getNames();
 	string symbolOne = getSymbols(playerOne);
