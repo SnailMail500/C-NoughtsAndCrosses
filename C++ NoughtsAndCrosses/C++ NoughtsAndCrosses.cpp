@@ -1,5 +1,6 @@
 // C++ NoughtsAndCrosses.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
+#include <cstdlib>
 #include <iostream>
 #include <string>
 
@@ -42,6 +43,6 @@ int main() {
 	string playerTwo = getNames();
 	string symbolOne = getSymbols(playerOne);
 	string symbolTwo = getSymbols(playerTwo);
-	playGame(playerOne, playerTwo, symbolOne, symbolTwo, gameBoard[3][3]);
+	playGame(playerOne, playerTwo, symbolOne, symbolTwo, gameBoard);
 	return 0;
 }
