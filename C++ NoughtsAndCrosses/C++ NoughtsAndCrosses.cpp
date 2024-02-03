@@ -48,7 +48,7 @@ void placeSymbol(string name, string symbol, string board[6][6]) {
 				valid = true;
 			}
 		}
-		if (board[x * 2][x * 2] == "-") {//this will not work as the coords arent right- BRANCH TO MAKE NEW SUB
+		if (board[x * 2][x * 2] == "-") {
 			board[x * 2][y * 2] = symbol;
 			empty = true;
 		}
