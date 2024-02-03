@@ -17,28 +17,38 @@ void drawBoard(string board[6][6]) {
 
 void placeSymbol(string name, string symbol, string board[6][6]) {
 	bool valid = false;
+	bool empty = false;
 	int x = 0, y = 0;
-	while (valid == false) {
-		drawBoard(board);
-		cout << name << ", please enter the coordinates of the space you wish to take; \n";
-		cout << "Please enter the X-coordinate: \n";
-		cin >> x;
-		if (x < 1 or x > 3) {
-			cout << "Sorry, that value wasn't within the required range. Please try again with a number between 1 and 3 inclusive\n";
+	while (empty == false) {
+		while (valid == false) {
+			drawBoard(board);
+			cout << name << ", please enter the coordinates of the space you wish to take; \n";
+			cout << "Please enter the X-coordinate: \n";
+			cin >> x;
+			if (x < 1 or x > 3) {
+				cout << "Sorry, that value wasn't within the required range. Please try again with a number between 1 and 3 inclusive\n";
+			}
+			else {
+				valid = true;
+			}
+		}
+		valid = false;
+		while (valid == false) {
+			cout << "Please enter the Y-coordinate: \n";
+			cin >> y;
+			if (y < 1 or y > 3) {
+				cout << "Sorry, that value wasn't within the required range. Please try again with a number between 1 and 3 inclusive\n";
+			}
+			else {
+				valid = true;
+			}
+		}
+		if (board[y + 1][x + 1] == "-") {//this will not work as the coords arent right- BRANCH TO MAKE NEW SUB
+			board[y + 1][x + 1] = symbol;
+			empty = true;
 		}
 		else {
-			valid = true;
-		}
-	}
-	valid = false;
-	while (valid == false) {
-		cout << "Please enter the Y-coordinate: \n";
-		cin >> y;
-		if (y < 1 or y > 3) {
-			cout << "Sorry, that value wasn't within the required range. Please try again with a number between 1 and 3 inclusive\n";
-		}
-		else {
-			valid = true;
+			empty = false;
 		}
 	}
 }
