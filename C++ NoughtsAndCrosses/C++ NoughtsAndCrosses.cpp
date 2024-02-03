@@ -6,6 +6,11 @@
 
 using namespace std;
 
+bool winCheck(string board[6][6], string symbol, string name) {
+	cout << "Temporary statement\n";
+	return false;
+}
+
 void drawBoard(string board[6][6]) {
 	for (int i = 0; i < 6; i++) {
 		for (int j = 0; j < 6; j++) {
@@ -43,8 +48,8 @@ void placeSymbol(string name, string symbol, string board[6][6]) {
 				valid = true;
 			}
 		}
-		if (board[y + 1][x + 1] == "-") {//this will not work as the coords arent right- BRANCH TO MAKE NEW SUB
-			board[y + 1][x + 1] = symbol;
+		if (board[x * 2][x * 2] == "-") {//this will not work as the coords arent right- BRANCH TO MAKE NEW SUB
+			board[x * 2][y * 2] = symbol;
 			empty = true;
 		}
 		else {
@@ -57,12 +62,13 @@ void playGame(string nameOne, string nameTwo, string symbolOne, string symbolTwo
 	int turnNum = 1;
 	bool gameWon = false;
 	while (gameWon == false) {
-		if (turnNum % 2 == 0) {
-			placeSymbol(nameTwo, symbolTwo, gameBoard);
+		if (turnNum == 9) {
+			gameWon = true;
 		}
-		else {
-			placeSymbol(nameOne, symbolOne, gameBoard);
+		else if (winCheck(gameBoard, symbolOne, nameOne) == true) {
+			cout << "Temporary output for testing\n";
 		}
+		else if
 	}
 }
 
