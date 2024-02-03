@@ -7,8 +7,8 @@
 using namespace std;
 
 void drawBoard(string board[6][6]) {
-	for (int i = 0; i < 7; i++) {
-		for (int j = 0; j < 7; j++) {
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 6; j++) {
 			cout << board[i][j];
 		}
 		cout << "\n";
@@ -16,7 +16,6 @@ void drawBoard(string board[6][6]) {
 }
 
 void placeSymbol(string name, string symbol, string board[6][6]) {
-	cout << "Temp statement.";
 	bool valid = false;
 	int x = 0, y = 0;
 	while (valid == false) {
@@ -84,11 +83,11 @@ string getNames() {
 int main() {
 	string gameBoard[6][6] = {
 		{" ", "1", "|", "2", "|", "3"},
-		{"1", "1, 1", "|", " ", "|", " "},
+		{"1", " ", "|", " ", "|", " "},
 		{" ", "-", "+", "-", "+", "-"},
 		{"2", " ", "|", " ", "|", " "},
 		{" ", "-", "+", "-", "+", "-"},
-		{"3", " ", "|", " ", "|", "3, 3"}
+		{"3", " ", "|", " ", "|", " "}
 	};
 	drawBoard(gameBoard);
 	string playerOne = getNames();
