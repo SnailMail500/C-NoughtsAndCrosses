@@ -44,7 +44,6 @@ void placeSymbol(string name, string symbol, string board[6][6]) {
 }
 
 void playGame(string nameOne, string nameTwo, string symbolOne, string symbolTwo, string gameBoard[6][6]) {
-	cout << "This statement is only here to stop any complaints if I forget to finish this project and run this in like 6 months' time\n";
 	int turnNum = 1;
 	bool gameWon = false;
 	while (gameWon == false) {
